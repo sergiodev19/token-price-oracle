@@ -1,0 +1,1 @@
+{"version":3,"file":"validationSchemas.js","sourceRoot":"","sources":["../../src/utils/validationSchemas.ts"],"names":[],"mappings":";;;AAEa,QAAA,0BAA0B,GAAW,EAAE,CAAC;AACxC,QAAA,0BAA0B,GAAW,EAAE,CAAC","sourcesContent":["import { Schema } from 'express-validator';\n\nexport const dataSourceValidationSchema: Schema = {};\nexport const tokenPairsValidationSchema: Schema = {};\n"]}

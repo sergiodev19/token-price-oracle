@@ -1,0 +1,1 @@
+{"version":3,"file":"DataSourceModel.d.ts","sourceRoot":"","sources":["../../src/models/DataSourceModel.ts"],"names":[],"mappings":"AAAA,OAAO,EAAU,QAAQ,EAAE,KAAK,EAAS,MAAM,UAAU,CAAC;AAC1D,OAAO,EAAE,iBAAiB,EAAE,MAAM,UAAU,CAAC;AAI7C,eAAO,MAAM,sBAAsB,iBAAiB,CAAC;AAgBrD,UAAU,gBAAiB,SAAQ,iBAAiB,EAAE,QAAQ;CAAG;AAEjE,eAAO,MAAM,eAAe,EAAE,KAAK,CAAC,gBAAgB,CAGnD,CAAC"}

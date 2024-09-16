@@ -1,0 +1,1 @@
+{"version":3,"file":"TokenPairModel.d.ts","sourceRoot":"","sources":["../../src/models/TokenPairModel.ts"],"names":[],"mappings":"AAAA,OAAO,EAAU,QAAQ,EAAE,KAAK,EAAS,MAAM,UAAU,CAAC;AAC1D,OAAO,EAAiB,gBAAgB,EAAE,MAAM,UAAU,CAAC;AAI3D,eAAO,MAAM,sBAAsB,gBAAgB,CAAC;AAsCpD,UAAU,eAAgB,SAAQ,gBAAgB,EAAE,QAAQ;CAAG;AAE/D,eAAO,MAAM,cAAc,EAAE,KAAK,CAAC,eAAe,CAGjD,CAAC"}

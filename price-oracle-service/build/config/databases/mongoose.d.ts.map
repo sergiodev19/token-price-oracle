@@ -1,0 +1,1 @@
+{"version":3,"file":"mongoose.d.ts","sourceRoot":"","sources":["../../../src/config/databases/mongoose.ts"],"names":[],"mappings":"AAGA,qBAAa,QAAQ;IACnB,OAAO,CAAC,MAAM,CAAC,QAAQ,CAAW;IAClC,OAAO,CAAC,QAAQ,CAAS;IACzB,OAAO,CAAC,WAAW,CAAkB;IAErC,OAAO;WAIO,WAAW,IAAI,QAAQ;IAUxB,OAAO,IAAI,OAAO,CAAC,IAAI,CAAC;IAaxB,UAAU,IAAI,OAAO,CAAC,IAAI,CAAC;CAUzC"}
