@@ -3,7 +3,7 @@ import { IDataSourceSchema } from '../utils';
 import { TOKEN_PAIRS_COLLECTION } from './TokenPairModel';
 import { SUPPORTED_DATA_SOURCE_COLLECTION } from './SupportedDataSourcesModel';
 
-/** 
+/**
  * The collection name for the data sources in MongoDB.
  * @constant {string}
  */
@@ -24,7 +24,7 @@ const DataSourceSchema: Schema = new Schema<IDataSourceSchema>(
       type: Schema.Types.ObjectId,
       ref: TOKEN_PAIRS_COLLECTION,
     },
-    
+
     /**
      * Reference to the supported data source associated with this data source.
      * @type {Schema.Types.ObjectId}

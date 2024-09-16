@@ -2,7 +2,7 @@ import { Schema, Document, Model, model } from 'mongoose';
 import { ITokenPairSchema } from '../utils';
 import { DATA_SOURCE_COLLECTION } from './DataSourceModel';
 
-/** 
+/**
  * The collection name for token pairs in MongoDB.
  * @constant {string}
  */

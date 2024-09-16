@@ -31,21 +31,23 @@ const checkAndInsert = async (name: SupportedDataSources, sourceType: IDataSourc
  */
 export const insertSupportedDataSources = async () => {
   try {
-    await Promise.all(Object.values(SupportedDataSources).map(async (dataSource) => {
-      switch (dataSource) {
-        case SupportedDataSources.BINANCE:
-          await checkAndInsert(SupportedDataSources.BINANCE, IDataSourceTypes.CEX);
-          break;
-        case SupportedDataSources.CRYPTO_COMPARE:
-          await checkAndInsert(SupportedDataSources.CRYPTO_COMPARE, IDataSourceTypes.CEX);
-          break;
-        case SupportedDataSources.UNISWAP:
-          await checkAndInsert(SupportedDataSources.UNISWAP, IDataSourceTypes.DEX);
-          break;
-        default:
-          break;
-      }
-    }));
+    await Promise.all(
+      Object.values(SupportedDataSources).map(async (dataSource) => {
+        switch (dataSource) {
+          case SupportedDataSources.BINANCE:
+            await checkAndInsert(SupportedDataSources.BINANCE, IDataSourceTypes.CEX);
+            break;
+          case SupportedDataSources.CRYPTO_COMPARE:
+            await checkAndInsert(SupportedDataSources.CRYPTO_COMPARE, IDataSourceTypes.CEX);
+            break;
+          case SupportedDataSources.UNISWAP:
+            await checkAndInsert(SupportedDataSources.UNISWAP, IDataSourceTypes.DEX);
+            break;
+          default:
+            break;
+        }
+      }),
+    );
   } catch (error) {
     throw new InternalError(
       'An error occurred during insertion of seed: ' + (error as unknown as Error).message,

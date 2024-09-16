@@ -1,0 +1,28 @@
+replicaCount: 1
+
+image:
+  repository: https://hub.docker.com/repository/docker/sergiodev19/account-service
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3000
+
+env:
+  JWT_SECRET: "L32t7%m22,IQ"
+  JWT_EXPIRATION_PERIOD: "24h"
+  BCRYPT_SALT_ROUNDS: 10
+  MONGO_URI: "mongodb://mongodb:27017/my_database"
+  REDIS_URL: "redis://redis:6379"
+
+ingress:
+  enabled: true
+  name: account-service
+  path: /
+  hosts:
+    - host: account-service.local
+      paths:
+        - /
+
+resources: {}

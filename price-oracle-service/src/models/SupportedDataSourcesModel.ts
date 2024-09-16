@@ -1,7 +1,7 @@
 import { Schema, Document, Model, model } from 'mongoose';
 import { IDataSourceTypes, ISupportedDataSourceSchema, SupportedDataSources } from '../utils';
 
-/** 
+/**
  * The collection name for supported data sources in MongoDB.
  * @constant {string}
  */
@@ -27,7 +27,7 @@ const SupportedDataSourcesSchema: Schema = new Schema<ISupportedDataSourceSchema
         message: '{VALUE} is not a valid type',
       },
     },
-    
+
     /**
      * The type of the data source.
      * Must be one of the predefined values in the IDataSourceTypes enum.

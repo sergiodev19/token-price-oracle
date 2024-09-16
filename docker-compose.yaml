@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  account-service:
+    image: account-service:latest
+    build:
+      context: ./account-service
+    ports:
+      - "3000:3000"
+    environment:
+      - JWT_SECRET="L32t7%m22,IQ"
+      - JWT_EXPIRATION_PERIOD="24h"
+      - BCRYPT_SALT_ROUNDS=10
+      - MONGO_URI="mongodb://mongodb:27017/my_database"
+      - REDIS_URL="redis://redis:6379"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - my-network
+
+  price-oracle-service:
+    image: price-oracle-service:latest
+    build:
+      context: ./price-oracle-service
+    ports:
+      - "3001:3001"
+    environment:
+      - JWT_SECRET="L32t7%m22,IQ"
+      - JWT_EXPIRATION_PERIOD="24h"
+      - BCRYPT_SALT_ROUNDS=10
+      - MONGO_URI="mongodb://mongodb:27017/my_database"
+      - REDIS_URL="redis://redis:6379"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - my-network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.runCommand('ping').ok"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 5s
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - my-network
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 5s
+    volumes:
+      - redis_data:/data
+    networks:
+      - my-network
+
+volumes:
+  mongodb_data:
+  redis_data:
+
+networks:
+  my-network:
+    driver: bridge

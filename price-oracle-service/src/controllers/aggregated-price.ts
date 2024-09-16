@@ -31,7 +31,7 @@ export const getAggregatedPrice = async (req: Request, res: Response, next: Next
 
     // Aggregate the price using the price service
     const aggregatedPrice = await priceService.aggregate(tokenPair);
-    
+
     // Cache the aggregated price
     await cacheService.set(symbol, JSON.stringify(aggregatedPrice));
 
